@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
+const port = process.env.PORT
+
 app.get("/api", (req, res) => {
     const clientId = process.env.CLIENT_ID;
     res.json({
@@ -9,6 +11,6 @@ app.get("/api", (req, res) => {
     });
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log("Server is running on port 5000");
 });
